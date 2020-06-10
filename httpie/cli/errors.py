@@ -17,6 +17,21 @@ class BasicAuthError(Error):
 class MethodMismatchError(Error):
     '''Exception raised when the wrong method is used with the wrong URL request'''
     pass
+    #initialize class
+
+    #define attributes such as error message and maybe the request or error itself?
+
+    #define error by status code of response? or parse request to check whether url and method match?
+
+    #define custom error message
+
+        #TODO: Figure out what information is important to include to help user
+
+    #if confirmed
+
+    #return custom error message
+
+    #do i need an else statement?
 
 class LocalHostError(Error):
     '''Exception raised when the user fails to provide a valid localhost'''
