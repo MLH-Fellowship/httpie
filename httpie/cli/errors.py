@@ -14,7 +14,7 @@ class AuthError(Error):
     '''Exception raised for wrong username and pw when authenticating'''
     #TODO: may need to account for different auth types within this class
   
-  
+
 class MethodMismatchError(Error):
     '''Exception raised when the wrong method is used with the wrong URL request'''
     def __init__(self,*args):
@@ -24,7 +24,7 @@ class MethodMismatchError(Error):
     def __str__(self):
         self.message = "HTTP Error 405. Method not allowed."
         return self.message
-        #TODO: Should I provide more information about appropriate methods?
+        #TODO: Change message to align with styling and information from current error message
 
 # raise MethodMismatchError
 
