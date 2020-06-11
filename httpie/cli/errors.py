@@ -2,6 +2,7 @@ class Error(Exception):
     '''Base Class for custom exceptions'''
     def __init__(self, *args, **kwargs):
         super().__init__(self,*args, **kwargs)
+        
     #TODO: Do I need to define custom methods/attributes for Error class or is *args, **kwargs,and built-in methods from Exception class sufficient?
 
 class ConnectionError(Error):
@@ -9,29 +10,23 @@ class ConnectionError(Error):
     '''Exception raised for error when connecting to server'''
     pass
 
-class BasicAuthError(Error):
+class AuthError(Error):
     '''Exception raised for wrong username and pw when authenticating'''
     #TODO: may need to account for different auth types within this class
-    pass
-
+  
+  
 class MethodMismatchError(Error):
     '''Exception raised when the wrong method is used with the wrong URL request'''
-    pass
-    #initialize class
+    def __init__(self,*args):
+        self.exc = None
+        self.message = None
+        
+    def __str__(self):
+        self.message = "HTTP Error 405. Method not allowed."
+        return self.message
+        #TODO: Should I provide more information about appropriate methods?
 
-    #define attributes such as error message and maybe the request or error itself?
-
-    #define error by status code of response? or parse request to check whether url and method match?
-
-    #define custom error message
-
-        #TODO: Figure out what information is important to include to help user
-
-    #if confirmed
-
-    #return custom error message
-
-    #do i need an else statement?
+# raise MethodMismatchError
 
 class LocalHostError(Error):
     '''Exception raised when the user fails to provide a valid localhost'''
