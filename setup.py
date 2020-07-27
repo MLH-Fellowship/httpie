@@ -33,6 +33,7 @@ tests_require = [
     'pytest',
     'pyopenssl',
     'mock',
+    'cryptography'
 ]
 
 
